@@ -1,0 +1,7 @@
+h1{
+    color: #FF0000; 
+    background-color: yellow;
+}
+h1:hover{
+    color: blue;
+}
