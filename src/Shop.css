@@ -1,0 +1,20 @@
+.grid-container{
+    display: grid;
+    grid-template-columns: auto auto auto;
+    justify-content: space-evenly;
+    background-color: aquamarine;
+}
+.grid-container > div {
+    box-shadow: 10px 10px 8px rgba(102, 102, 102, 0.818);
+    background-color: white;
+    border-color:black;
+    border-style: solid;
+    border-radius: 15px;
+    margin: 10px;
+    text-align: center;
+    padding-top: 10px;
+}
+.grid-container > div:hover{
+    border-color:red;
+    border-width: 5px;
+}
