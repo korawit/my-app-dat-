@@ -14,6 +14,10 @@ export default function Shop(){
         alert("Add success!");
         setCart([...cart,products[id]]);
     }
+    const clearCart=()=> {
+        alert("Clear success!");
+        setCart([]); }
+    let total=0;
     const products=[
         {id:0,name:"Notebook Acer Swift",price:45900,img:"https://img.advice.co.th/images_nas/pic_product4/A0147295/A0147295_s.jpg"},
         {id:1,name:"Notebook Asus Vivo",price:19900,img:"https://img.advice.co.th/images_nas/pic_product4/A0146010/A0146010_s.jpg"},
@@ -23,8 +27,11 @@ export default function Shop(){
         {id:5,name:"Notebook HP Envy",price:46900,img:"https://img.advice.co.th/images_nas/pic_product4/A0145712/A0145712_s.jpg"}];
         const productsList=products.map(item=><Item callback={handleClick} {...item}/>);
         const cartList=cart.map(item=><li>{item.id} {item.name} {item.price}</li>)
+        for(let i=0;i<cart.length;i++)
+            total=total+cart[i].price;
         return(<><div className="grid-container">{productsList}</div>
-              <h1>Cart</h1>
+              <h1>Cart</h1><button onClick={()=>clearCart()}>Clear Cart</button>
               <ol>{cartList}</ol>
+              <h2>Total : {total} baht</h2>
         </>);
 }
